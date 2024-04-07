@@ -18,8 +18,18 @@ public class Company {
 //        employees[2].setSalary(420);
 //        System.out.println(employees[2]);
 
+
+        int count = 0;
         for (int i = 0; i < employees.length; i++) {
-            System.out.println(employees[i]);
+            if(!(employees[i] instanceof Manager)) {
+                count++;
+            }
+        }
+        ((Manager) employees[0]).setNumberOfSubordinates(count);
+        employees[0].setSalary(7500);
+
+        for (Employee emp : employees) {
+            System.out.println(emp);
         }
     }
 }
